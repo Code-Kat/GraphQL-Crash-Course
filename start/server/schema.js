@@ -36,7 +36,18 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addAnimal: Animal
+    addAnimal(
+      image: String!
+      title: String!
+      rating: Float
+      price: String!
+      description: [String!]!
+      slug: String!
+      stock: Int!
+      onSale: Boolean
+      category: String!
+    ): Animal
+    removeAnimal(id: ID!): Boolean!
   }
 `;
 
